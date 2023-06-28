@@ -21,7 +21,7 @@ $mail->Subject = $_POST['subject'];
 $mail->Body = $_POST['message'];
 $mail->AddAddress("spike.jujuy10@gmail.com");
 
- if(!$mail->Send()) {
+if(!$mail->Send()) {
    echo '<script type="text/javascript">'
    . 'Swal.fire({'
    . 'icon: \'error\','
@@ -29,29 +29,22 @@ $mail->AddAddress("spike.jujuy10@gmail.com");
    . 'text: \'No Enviado!\'});'
    . '</script>'
    . '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>'
-   '  <script>
-   setTimeout( function() { window.location.href = "https://dev-jujuy.net.ar"; }, 2000 );'
-, '</script>';
- } else 
- 
- {
-
+   . '<script>'
+   . 'setTimeout( function() { window.location.href = "https://dev-jujuy.net.ar"; }, 2000 );'
+   . '</script>';
+} else {
    echo '<script type="text/javascript">'
    . 'Swal.fire('
    . '\'Enviado\','
-   . '\'Corecctamente\','
+   . '\'Correctamente\','
    . '\'Gracias\''
    . ');'
    . '</script>'
    . '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>'
-   '  <script>
-   setTimeout( function() { window.location.href = "https://dev-jujuy.net.ar"; }, 2000 );'
-, '</script>';
-   
- 
- }
-
-
+   . '<script>'
+   . 'setTimeout( function() { window.location.href = "https://dev-jujuy.net.ar"; }, 2000 );'
+   . '</script>';
+}
 
 
 
