@@ -28,7 +28,10 @@ $mail->AddAddress("spike.jujuy10@gmail.com");
    . 'title: \'Email\','
    . 'text: \'No Enviado!\'});'
    . '</script>'
-   . '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+   . '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>'
+   '  <script>
+   setTimeout( function() { window.location.href = "https://dev-jujuy.net.ar"; }, 2000 );'
+, '</script>';
  } else 
  
  {
@@ -40,10 +43,12 @@ $mail->AddAddress("spike.jujuy10@gmail.com");
    . '\'Gracias\''
    . ');'
    . '</script>'
-   . '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+   . '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>'
+   '  <script>
+   setTimeout( function() { window.location.href = "https://dev-jujuy.net.ar"; }, 2000 );'
+, '</script>';
    
-     setTimeout( function() { window.location.href = "https://dev-jujuy.net.ar"; }, 2000 );'
-  , '</script>';
+ 
  }
 
 
