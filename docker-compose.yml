@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+  parcial:
+    image: parcial
+    container_name: "parcial-sitio-sin-www"
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.parcial.rule=Host(`dev-jujuy.net.ar`)" # Nueva regla para el dominio principal
+      - "traefik.http.routers.parcial.entrypoints=websecure"
+      - "traefik.http.routers.parcial.tls.certresolver=myresolver"
+      - "traefik.http.routers.parcial.middlewares=redirect-nonwww"
+      - "traefik.http.middlewares.redirect-nonwww.redirectregex.regex=^https?://www\\.(.*)"
+      - "traefik.http.middlewares.redirect-nonwww.redirectregex.replacement=https://$$1"
+      - "traefik.http.routers.parcial.service=parcial"
+      - "traefik.http.services.parcial.loadbalancer.server.port=80"
+
+  www-parcial:
+    image: parcial
+    container_name: "parcial-sitio-con-www"
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.www-parcial.rule=Host(`www.dev-jujuy.net.ar`)"
+      - "traefik.http.routers.www-parcial.entrypoints=websecure"
+      - "traefik.http.routers.www-parcial.tls.certresolver=myresolver"
+      - "traefik.http.routers.www-parcial.middlewares=redirect-www"
+      - "traefik.http.middlewares.redirect-www.redirectregex.regex=^(https?://)(www\\.)?(.*)$$"
+      - "traefik.http.middlewares.redirect-www.redirectregex.replacement=$${1}$${3}"
+      - "traefik.http.routers.www-parcial.service=parcial"
+      - "traefik.http.services.www-parcial.loadbalancer.server.port=80"
+
+networks:
+  my-network:
+    external:
+      name: my-network

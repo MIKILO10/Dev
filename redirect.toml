@@ -1,0 +1,11 @@
+[http.middlewares]
+  [http.middlewares.redirect-nonwww.redirectRegex]
+    regex = "^(https?://)www\\.(.*)"
+    replacement = "${1}${2}"
+    permanent = true
+
+[http.routers]
+  [http.routers.redirect-nonwww]
+    rule = "HostRegexp(`{host:.+}`)"
+    middlewares = ["redirect-nonwww"]
+    service = "noop@internal"
