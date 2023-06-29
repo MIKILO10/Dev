@@ -3,14 +3,14 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require './src/Exception.php';
-require './src/PHPMailer.php';
-require './src/SMTP.php';
+require '../src/Exception.php';
+require '../src/PHPMailer.php';
+require '../src/SMTP.php';
 
 // Configuración de PHPMailer
 $mail = new PHPMailer();
 $mail->isSMTP(); // Habilita SMTP
-$mail->SMTPDebug = 1; // Establece el nivel de depuración a 0 para no mostrar mensajes
+$mail->SMTPDebug = 0; // Establece el nivel de depuración a 0 para no mostrar mensajes
 $mail->SMTPAuth = true; // Habilita la autenticación SMTP
 $mail->SMTPSecure = 'tls'; // Establece el tipo de seguridad (tls o ssl)
 $mail->Host = 'smtp.gmail.com';
