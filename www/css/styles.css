@@ -1,17 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Nunito", sans-serif;
-  font-size: 27px;
-  font-weight: bold;
-}
 
-body {
-  background-color: #fff59d;
-  min-width: 400px;
+  font-weight: bold;
 }
 
 .header {
@@ -21,7 +22,7 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 100€;
+  height: 250px;
   padding: 5px 10%;
 }
 
@@ -32,9 +33,10 @@ body {
 
 .header .logo img {
   padding-top: 10px;
-  height: 150px;
+  height: 200px;
   width: auto;
   transition: all 0.3s;
+  border-radius: 20px 20px 20px 20px;
 }
 
 .header .logo img:hover {
@@ -60,7 +62,7 @@ body {
 }
 
 .header .nav-links a {
-  font-size: 700;
+  font-size: 30px;
   color: #eceff1;
   transition: all 0.3s ease 0s;
 }
@@ -81,14 +83,15 @@ body {
 .header .btn button,
 /**/.header .menu button {
   margin-left: 20px;
-  font-weight: 700;
+  font-weight: 700px;
   color: #ffffff;
   padding: 9px 25px;
   background: #71e307;
   border: none;
-  border-radius: 50px;
+  border-radius: 70px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
+  font-size: 22px;
 }
 
 .header .btn button:hover,
@@ -166,4 +169,298 @@ body {
     top: 15px;
     right: 35px;
   }
+}
+
+/*EFECTO PARALLAX*/
+main {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 2px;
+}
+
+section {
+  transform-style: preserve-3d;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+section h1 {
+  text-align: center;
+  font-size: 4rem;
+  font-family: sans-serif;
+  padding-bottom: 10%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#particles-js {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.parallax {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000000, 4px 4px 4px #111, 6px 6px 4px #222;
+}
+
+.parallax h1 {
+  font-family: "Staatliches", cursive;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.bg {
+  position: relative;
+  background: #c21500;
+  background: -webkit-linear-gradient(to right, #ffc500, #c21500);
+  background: linear-gradient(to right, #ffc500, #c21500);
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("../images/parallax.jpg");
+  background-size: cover;
+  z-index: -1;
+}
+
+/*PARTICULAS*/
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("../images/parallax.jpg");
+  background-size: cover;
+  z-index: -1;
+}
+
+/* ---- stats.js ---- */
+
+.count-particles {
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13e8e9;
+  font-size: 0.8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.js-count-particles {
+  font-size: 1.1em;
+}
+
+#stats,
+.count-particles {
+  -webkit-user-select: none;
+}
+
+#stats {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.count-particles {
+  border-radius: 0 0 3px 3px;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: url("../images/services.jpg") center center no-repeat;
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  background-size: cover;
+}
+
+#footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(26, 46, 64, 0.85);
+  z-index: 1;
+}
+
+#footer .footer-top {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 80px 0;
+}
+
+#footer .footer-top h3 {
+  font-family: "Staatliches", cursive;
+  font-size: 60px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  text-shadow: 2px 2px 4px #000000, 4px 4px 4px #111, 6px 6px 4px #222;
+}
+
+#footer .footer-top p {
+  font-family: "Staatliches", cursive;
+  font-size: 40px;
+  text-align: center;
+  font-style: italic;
+  padding: 0;
+  text-shadow: 2px 2px 4px #000000, 4px 4px 4px #111, 6px 6px 4px #222;
+}
+
+#footer .footer-bottom {
+  border-top: 1px solid #1a2e40;
+  z-index: 2;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#footer .copyright {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  #footer .copyright,
+  #footer .credits {
+    padding: 5px;
+    float: none;
+    text-align: ceneter;
+  }
+
+  #header .logo {
+    display: block;
+    margin: auto;
+    max-height: 150px;
+  }
+  #header .logo img {
+    max-height: 140px;
+  }
+}
+
+.color_footer {
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  border: 1px solid #000000;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  padding: 10px;
+}
+
+.remove-bg {
+  filter: brightness(1.1);
+  mix-blend-mode: multiply;
+}
+
+.logo-ucse {
+  width: 150px;
+}
+
+@media only screen and (max-width: 767px) {
+  /* Estilos aplicados para pantallas con un ancho máximo de 767px */
+
+  .parallax {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    overflow: hidden;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000000, 4px 4px 4px #111, 6px 6px 4px #222;
+  }
+
+  .parallax h1 {
+    font-family: "Staatliches", cursive;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  #footer .copyright {
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px #000000, 4px 4px 4px #111, 6px 6px 4px #222;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* Estilos aplicados para pantallas con un ancho mínimo de 768px y un ancho máximo de 991px */
+
+  .parallax {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    overflow: hidden;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000000, 4px 4px 4px #111, 6px 6px 4px #222;
+  }
+
+  .parallax h1 {
+    font-family: "Staatliches", cursive;
+    margin: 100px;
+    font-size: 4rem;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  /* Estilos aplicados para pantallas con un ancho mínimo de 992px (pantallas de escritorio) */
+}
+
+@media only screen and (min-width: 1200px) {
+  /* Estilos aplicados para pantallas con un ancho mínimo de 1200px (pantallas grandes) */
 }

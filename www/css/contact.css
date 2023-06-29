@@ -1,3 +1,16 @@
+body {
+  background-color: #fdd067;
+}
+
+section {
+  height: 70svh;
+}
+
+p {
+  font-size: 30px;
+  color: #8edbff;
+  text-shadow: 2px 2px 4px #000000, 4px 4px 4px #111, 6px 6px 4px #222;
+}
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
@@ -5,12 +18,12 @@
   color: #444444;
   text-align: center;
   box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
-  padding: 20px 0 30px 0;
+  padding: 20px 0 50px 0;
   background: #fff;
 }
 
 .contact .info-box i {
-  font-size: 32px;
+  font-size: 50px;
   color: #fdc134;
   border-radius: 50%;
   padding: 8px;
@@ -18,16 +31,15 @@
 }
 
 .contact .info-box h3 {
-  font-size: 20px;
+  font-size: 40px;
   color: #777777;
   font-weight: 700;
-  margin: 10px 0;
 }
 
 .contact .info-box p {
   padding: 0;
   line-height: 24px;
-  font-size: 14px;
+  font-size: 20px;
   margin-bottom: 0;
 }
 
@@ -83,7 +95,7 @@
 .contact .php-email-form textarea {
   border-radius: 0;
   box-shadow: none;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .contact .php-email-form input::focus,
@@ -136,4 +148,13 @@ h2 {
   font-weight: bold;
   color: white;
   text-shadow: 2px 2px 4px #000000, 4px 4px 4px #111, 6px 6px 4px #222;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  /* Estilos aplicados para pantallas con un ancho máximo de 767px */
+
+  section {
+    height: 205vh;
+  }
 }
