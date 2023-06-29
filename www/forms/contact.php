@@ -10,7 +10,7 @@ require '../src/SMTP.php';
 // Configuración de PHPMailer
 $mail = new PHPMailer();
 $mail->isSMTP(); // Habilita SMTP
-$mail->SMTPDebug = 0; // Establece el nivel de depuración a 0 para no mostrar mensajes
+$mail->SMTPDebug = 2; // Establece el nivel de depuración a 0 para no mostrar mensajes
 $mail->SMTPAuth = true; // Habilita la autenticación SMTP
 $mail->SMTPSecure = 'tls'; // Establece el tipo de seguridad (tls o ssl)
 $mail->Host = 'smtp.gmail.com';
@@ -29,14 +29,14 @@ if (!$mail->send()) {
     // Error al enviar el correo electrónico
     echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20"></script>';
     echo '<script type="text/javascript">
-            Swal.fire({
-                icon: "error",
-                title: "Error",
-                text: "No se pudo enviar el correo electrónico."
-            }).then(function() {
-                window.location.href = "https://dev-jujuy.net.ar";
-            });
-        </script>';
+             Swal.fire({
+                 icon: "error",
+                 title: "Error",
+                 text: "No se pudo enviar el correo electrónico."
+             }).then(function() {
+                 window.history.back();
+             });
+         </script>';
 } else {
     // Correo electrónico enviado correctamente
     echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20"></script>';
@@ -46,8 +46,7 @@ if (!$mail->send()) {
                 title: "Éxito",
                 text: "Correo electrónico enviado correctamente."
             }).then(function() {
-               window.location.href = "https://dev-jujuy.net.ar";
+               window.history.back();
             });
         </script>';
 }
-?>
