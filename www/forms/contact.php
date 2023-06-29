@@ -25,28 +25,12 @@ $mail->Body = $_POST['message'];
 $mail->addAddress('spike.jujuy10@gmail.com');
 
 // Intenta enviar el correo electrónico
-if (!$mail->send()) {
-    // Error al enviar el correo electrónico
-    echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20"></script>';
-    echo '<script type="text/javascript">
-             Swal.fire({
-                 icon: "error",
-                 title: "Error",
-                 text: "No se pudo enviar el correo electrónico."
-             }).then(function() {
-                 window.history.back();
-             });
-         </script>';
+if (!$mail->Send()) {
+    echo '<script type="text/javascript">', 'alert("no enviado")
+    setTimeout( function() {   window.history.back(); }, 2000 );', '</script>';
 } else {
-    // Correo electrónico enviado correctamente
-    echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20"></script>';
-    echo '<script type="text/javascript">
-            Swal.fire({
-                icon: "success",
-                title: "Éxito",
-                text: "Correo electrónico enviado correctamente."
-            }).then(function() {
-               window.history.back();
-            });
-        </script>';
+
+    echo '<script type="text/javascript">', 'alert("enviado")
+  
+    setTimeout( function() {   window.history.back(); }, 2000 );', '</script>';
 }
